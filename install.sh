@@ -16,6 +16,7 @@ apt-get -y install salt-master=2015.5.3+ds-1trusty1
 ## apt-get -y install salt-master=2015.5.3+ds-1trusty1 salt-syndic=2015.5.3+ds-1trusty1
 
 ## auto accept key
- sed -e /auto_accept: False/ /auto_accept: True/
+## Modify the /etc/salt/master file as required.
+ sed -i -s  /auto_accept: False/ /auto_accept: True/ /etc/salt/master
 
-dkjflsjflsj
+
