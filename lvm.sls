@@ -20,7 +20,7 @@ lvcreate_swaplv:
 create_swap:
   cmd.run:
     - name: "mkswap /dev/swapvg/swaplv"
-    - unless: 'test "$(blkid -s TYPE -o value /dev/swapvg/swaplv)" == "swap"'
+    - unless: 'test ! -z "$(blkid -s TYPE -o value /dev/swapvg/swaplv)"'
 enable_swap:
   mount.swap:
     - name: "/dev/swapvg/swaplv"
@@ -43,7 +43,7 @@ lvcreate_appslv:
 mkfs_apps:
   cmd.run:
     - name: "mkfs.ext4 /dev/appsvg/appslv"
-    - unless: 'test "$(blkid -s TYPE -o value /dev/appsvg/appslv)" == "ext4"'
+    - unless: 'test ! -z "$(blkid -s TYPE -o value /dev/appsvg/appslv)"'
 mount_apps:
   mount.mounted:
     - name: "/apps"
