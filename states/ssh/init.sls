@@ -8,9 +8,9 @@
 
 auth:
   file.managed:
-    - name: "/root/.ssh/authorized_keys"
-    - user: root
-    - group: root
+    - name: "/home/jkailasam/.ssh/authorized_keys"
+    - user: jkailasam
+    - group: jkailasam
     - mode: 0400
     - source: salt://ssh/id_rsa.pub.root.jinja
     - template: jinja
