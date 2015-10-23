@@ -3,7 +3,7 @@ manage_root_key:
     - user: jkailasam
     - enc: ssh-rsa
     - comment: jkailasam@allservers
-    - source: salt://ssh/id_rsa.pub.root
-#    - name:  {{ pillar['users']['root'] }}
+#    - source: salt://ssh/id_rsa.pub.root
+    - name:  {{ pillar['users']['root'] }}
 
 
